@@ -1,5 +1,7 @@
 
 using DevVoiceFirst.Context;
+using DevVoiceFirst.IRepository;
+using DevVoiceFirst.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -15,6 +17,11 @@ if (string.IsNullOrEmpty(builder.Environment.WebRootPath))
 builder.Services.AddControllers();
 builder.Services.AddSingleton<DapperContext>();
 
+builder.Services.AddScoped<IDivisionRepo, DivisionRepo>();
+builder.Services.AddScoped<IUserRepo, UserRepo>();
+builder.Services.AddScoped<IBranchRepo, BranchRepo>();
+builder.Services.AddScoped<IRoleRepo, RoleRepo>();
+builder.Services.AddScoped<ICompanyRepo, CompanyRepo>();
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>

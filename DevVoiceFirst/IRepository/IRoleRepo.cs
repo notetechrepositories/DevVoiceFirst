@@ -13,8 +13,8 @@ namespace DevVoiceFirst.IRepository
 
 
         Task<IEnumerable<RoleModel>> GetAllSysRoleAsync(Dictionary<string, string> filters);
-        Task<int> AddSysRoleAsync(object parameters, IDbTransaction transaction = null);
-        Task<int> UpdateSysRoleAsync(object parameters, IDbTransaction transaction = null);
-        Task<int> DeleteSysRoleAsync(string id, IDbTransaction transaction = null);
+        Task<int> AddSysRoleAsync(object parameters, IDbTransaction? transaction = null);
+        Task<int> UpdateSysRoleAsync(object parameters, IDbTransaction? transaction = null);
+        Task<int> DeleteSysRoleAsync(string id, IDbTransaction? transaction = null);
     }
 }
